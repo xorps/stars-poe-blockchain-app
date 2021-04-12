@@ -6,8 +6,10 @@
         "noImplicitReturns": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
+        "module": "CommonJS",
+        "target": "ESNext",
         "outDir": "build"
     },
     "include": ["src/**/*"],
-    "exclude": ["node_modules", "build", "tests"]
+    "exclude": ["node_modules", "build"]
 }

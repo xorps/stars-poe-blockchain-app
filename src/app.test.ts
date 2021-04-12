@@ -1,12 +1,12 @@
 import * as request from 'supertest';
 import * as bitcoinMessage from 'bitcoinjs-message';
 import * as bitcoin from 'bitcoinjs-lib';
-import { createApp } from '../src/app';
-import Blockchain from '../src/Blockchain';
-import Block from '../src/Block';
-import sha256 from '../src/sha256';
-import Message from '../src/Message';
-import { Star } from '../src/Star';
+import { createApp } from './app';
+import Blockchain from './Blockchain';
+import Block from './Block';
+import sha256 from './sha256';
+import Message from './Message';
+import { Star } from './Star';
 
 const app = createApp();
 

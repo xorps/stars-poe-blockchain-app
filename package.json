@@ -4,11 +4,9 @@
   "description": "A sample Proof of Existence blockchain app using NodeJS runtime",
   "main": "build/server.js",
   "scripts": {
-    "dev": "ts-node src/server.ts",
     "build": "tsc",
-    "postinstall": "tsc",
     "start": "node build/server.js",
-    "test": "jest"
+    "test": "jest build"
   },
   "repository": {
     "type": "git",
@@ -23,13 +21,12 @@
   "devDependencies": {
     "@types/crypto-js": "^4.0.1",
     "@types/express": "^4.17.11",
+    "@types/hex2ascii": "file:modules/hex2ascii",
     "@types/jest": "^26.0.22",
     "@types/node": "^14.14.37",
     "@types/supertest": "^2.0.11",
     "jest": "^26.6.3",
     "supertest": "^6.1.3",
-    "ts-jest": "^26.5.4",
-    "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
   },
   "dependencies": {
