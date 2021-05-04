@@ -88,5 +88,10 @@ export async function createApp(): Promise<express.Application & {blockchain: Bl
         async (data) => json(await blockchain.submitStar(data))
     )));
 
+    app.get('/validateChain', jsonAPI(async (_) => {
+        const errors = await blockchain.validateChain();
+        return json({errors});
+    }));
+
     return app;
 }

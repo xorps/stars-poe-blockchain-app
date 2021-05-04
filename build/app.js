@@ -68,6 +68,10 @@ async function createApp() {
     }));
     app.post('/requestValidation', jsonAPI(schema({ address: t.string }, async ({ address }) => json(await blockchain.requestMessageOwnershipVerification(address)))));
     app.post('/submitstar', jsonAPI(schema({ address: t.string, message: t.string, signature: t.string, star: Star_1.Star }, async (data) => json(await blockchain.submitStar(data)))));
+    app.get('/validateChain', jsonAPI(async (_) => {
+        const errors = await blockchain.validateChain();
+        return json({ errors });
+    }));
     return app;
 }
 exports.createApp = createApp;

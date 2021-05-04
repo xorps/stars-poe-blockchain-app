@@ -98,4 +98,6 @@ test('full workflow', async () => {
     expect(submitStarResponse.body).toMatchObject(expectedBlock);
     const getStarResponse = await request(await app).get(`/blocks/${address}`);
     expect(getStarResponse.body).toMatchObject([{owner: address, star}]);
+    const validateChainResponse = await request(await app).get('/validateChain');
+    expect(validateChainResponse.body).toMatchObject({errors: []});
 });
