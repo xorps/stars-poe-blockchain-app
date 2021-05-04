@@ -27,6 +27,10 @@ class Blockchain {
             block.previousBlockHash = this.chain[block.height - 1].hash;
         block.hash = await block.computeHash();
         this.chain.push(block);
+        // validate the chain
+        const errors = await this.validateChain();
+        if (errors.length > 0)
+            throw new Error('chain validation failed');
     }
     /** O(1) */
     async getBlockByHeight(height) {
